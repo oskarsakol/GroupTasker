@@ -6,14 +6,13 @@ from TaskApp.views import *
 
 
 router = routers.DefaultRouter()
-# router = routers.SimpleRouter()
 
 
 router.register(r'task', TaskViewSet, base_name='TaskView')
-router.register(r'groups', views.GroupViewSet)
-router.register(r'users', views.UserViewSet)
-# router.register(r'due_task', views.DueTaskViewSet)
-# router.register(r'completed_task', views.CompletedTaskViewSet)
+router.register(r'groups', GroupViewSet)
+router.register(r'users', UserViewSet)
+router.register(r'comment', CommentViewSet, base_name='CommentView')
+
 
 urlpatterns = [
     url(r'^', include(router.urls)),
